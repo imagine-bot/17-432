@@ -32,7 +32,7 @@ const Pricing: React.FC<PricingProps> = ({ pricingTypes }) => {
       </div>
       <div className="grid grid-cols-3 gap-4 mt-10">
         {pricingTypes.map((pricingType) => (
-          <div key={pricingType.type} className="bg-white p-4 rounded-lg shadow-md hover:bg-blue-200">
+          <div key={pricingType.type} className="bg-white p-4 rounded-lg shadow-md hover:bg-blue-200 border-red-500 border-2">
             <h2 className="text-2xl font-bold mb-2">{pricingType.type}</h2>
             <p className="text-sm mb-2">{pricingType.description}</p>
             <p className="text-xl font-semibold mb-4">${isAnnual ? pricingType.price * 12 : pricingType.price} / {isAnnual ? 'year' : 'month'}</p>
