@@ -4,6 +4,7 @@ import React from 'react';
 type PricingProps = {
   pricingTypes: {
     type: string;
+    description: string;
     price: number;
     features: string[];
     cta: string;
@@ -33,6 +34,7 @@ const Pricing: React.FC<PricingProps> = ({ pricingTypes }) => {
         {pricingTypes.map((pricingType) => (
           <div key={pricingType.type} className="bg-white p-4 rounded-lg shadow-md hover:bg-blue-200">
             <h2 className="text-2xl font-bold mb-2">{pricingType.type}</h2>
+            <p className="text-sm mb-2">{pricingType.description}</p>
             <p className="text-xl font-semibold mb-4">${isAnnual ? pricingType.price * 12 : pricingType.price} / {isAnnual ? 'year' : 'month'}</p>
             <ul className="mb-4">
               {pricingType.features.map((feature) => (
